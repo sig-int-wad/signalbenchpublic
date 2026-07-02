@@ -1,0 +1,265 @@
+/* Signal Bench — shared site styles. Static CSS, no build step, no remote assets. */
+
+:root {
+  --blue-900: #021f57;
+  --blue-800: #023c9a;
+  --blue-700: #0442ab;
+  --blue-600: #0b4da6;
+  --blue-500: #175fd1;
+  --ink: #0b1a33;
+  --paper: #f4f7fd;
+  --card: #ffffff;
+  --line: #d7e0f2;
+  --muted: #55617a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--blue-600);
+}
+
+a:hover {
+  color: var(--blue-700);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+.site-header {
+  background:
+    linear-gradient(rgba(2, 22, 66, 0.55), rgba(2, 22, 66, 0.55)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 28px),
+    var(--blue-800);
+  padding: 1rem 1.25rem;
+}
+
+.site-header .header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-header img.mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.site-header .site-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: #eaf1ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 2rem;
+  border: 1px solid var(--line);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--blue-600);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem;
+  color: var(--blue-900);
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--blue-700);
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 2.25rem;
+  color: var(--blue-900);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.35rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+  color: var(--blue-900);
+}
+
+p {
+  margin: 0.85rem 0;
+}
+
+ul,
+ol {
+  padding-left: 1.3rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+.updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.warning {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.button {
+  display: inline-block;
+  background: var(--blue-600);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button:hover {
+  background: var(--blue-700);
+  color: #fff;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--blue-600);
+  border: 1px solid var(--blue-600);
+}
+
+.button.secondary:hover {
+  background: var(--paper);
+  color: var(--blue-700);
+}
+
+site-footer,
+footer.site-footer {
+  border-top: 1px solid var(--line);
+}
+
+footer.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 1.25rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer.site-footer .footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  align-items: center;
+}
+
+footer.site-footer a {
+  color: var(--muted);
+}
+
+footer.site-footer a:hover {
+  color: var(--blue-700);
+}
+
+@media (max-width: 520px) {
+  .site-header .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .site-nav {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
