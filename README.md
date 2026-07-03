@@ -11,8 +11,7 @@ This package contains a complete static copy of the rewritten Signal Walk public
 - `assets/site.js` — mobile navigation and screenshot lightbox
 - `icon-512.png` and `feature-graphic.png` — current public brand assets
 - `screenshots/` — current public screenshots, included only so the package previews correctly
-- `SCREENSHOT_UPDATE_CHECKLIST.md` — required image replacements before launch
-- `IMPLEMENTATION_NOTES.md` — copy, legal, and release-review notes
+- `robots.txt` and `sitemap.xml` — crawl and indexing support for the production domain
 
 
 ## Contact addresses included
@@ -23,13 +22,13 @@ This package contains a complete static copy of the rewritten Signal Walk public
 - `hello@signalwalk.com` — general contact
 - `developer@signalwalk.com` — developer identity and technical ownership
 
-## Important screenshot warning
+## Screenshot note
 
-The screenshots currently included in `screenshots/` came from the live public repository and still show legacy Signal Bench app screens. Replace all six screenshots with current Signal Walk captures before publishing this package.
+This repair pass did not replace or re-verify the screenshots in `screenshots/`. Review all six captures before launch if you need a final screenshot signoff.
 
-## Apply to the public repository
+## Repository use
 
-Copy the package over the matching paths in `signalwalkpublic`. The filenames and directory structure match the current site.
+The files in this repository are the public site. Serve the site from the repository root or publish it through the existing GitHub Pages setup for `signalwalk.com`.
 
 ## Local preview
 
@@ -47,4 +46,4 @@ Open `http://localhost:8000/`.
 2. Confirm the banner and icon match the final Play Store assets.
 3. Verify the Privacy Policy against the final signed release build and Google Play Data safety answers.
 4. Test navigation, screenshot lightboxes, keyboard focus, and mobile layouts.
-5. Update the GitHub repository description if it still says Signal Bench.
+5. Verify Cloudflare Email Routing destinations for every published mailbox alias.

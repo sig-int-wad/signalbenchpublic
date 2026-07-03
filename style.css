@@ -607,13 +607,16 @@ section[class^="sec-"],
 
 .thumb-button {
   display: block;
+  width: 100%;
   padding: 0;
   border: 0;
   background: transparent;
+  text-align: inherit;
   cursor: zoom-in;
 }
 
 .thumb-button .device-frame {
+  display: block;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 

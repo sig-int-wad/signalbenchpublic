@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signal Walk — Privacy Policy</title>
   <meta name="description" content="Signal Walk privacy policy: what the Android app observes, what remains on your device, and when optional third-party network requests occur.">
-  <link rel="canonical" href="https://sig-int-wad.github.io/signalwalkpublic/privacy/">
+  <link rel="canonical" href="https://signalwalk.com/privacy/">
   <meta name="theme-color" content="#063d93">
   <link rel="icon" type="image/png" href="../icon-512.png">
   <link rel="apple-touch-icon" href="../icon-512.png">
@@ -13,14 +13,14 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Signal Walk">
-  <meta property="og:url" content="https://sig-int-wad.github.io/signalwalkpublic/privacy/">
+  <meta property="og:url" content="https://signalwalk.com/privacy/">
   <meta property="og:title" content="Signal Walk — Privacy Policy">
   <meta property="og:description" content="How Signal Walk stores sessions locally, handles exports, and discloses optional map and AI-related network requests.">
-  <meta property="og:image" content="https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png">
+  <meta property="og:image" content="https://signalwalk.com/feature-graphic.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Signal Walk — Privacy Policy">
   <meta name="twitter:description" content="How Signal Walk stores sessions locally, handles exports, and discloses optional map and AI-related network requests.">
-  <meta name="twitter:image" content="https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png">
+  <meta name="twitter:image" content="https://signalwalk.com/feature-graphic.png">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="../" aria-label="Signal Walk home">
-      <img class="mark" src="../icon-512.png" alt="">
+      <img class="mark" src="../icon-512.png" alt="" aria-hidden="true">
       <span class="site-name">Signal Walk</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
@@ -50,7 +50,6 @@
 <main class="legal" id="main">
   <a class="back" href="../">&larr; Back to Signal Walk</a>
 
-  <!-- ASSET TODO: Replace this banner if the current image still uses legacy branding. -->
   <img src="../feature-graphic.png" alt="Signal Walk — Field instrument for signal awareness" class="banner" width="1024" height="500">
 
   <div class="legal-header">
@@ -72,8 +71,8 @@
 
   <section aria-labelledby="overview">
     <h2 id="overview">Overview</h2>
-    <p>Signal Walk is a local-first Android field telemetry tool. When you start a Walk Capture, the app organizes wireless and sensor readings available through your phone into a session you can review, save, and export.</p>
-    <p>Signal Walk does not automatically upload your session content. Saved sessions stay on your device unless you choose to export or share a file. Optional map and AI-related features can make third-party network requests, which are explained in this policy.</p>
+    <p>Signal Walk is a local-first Android field instrument. When you start a Walk Capture, the app reads supported wireless, motion, environmental, cellular, and location-quality signals from your phone so it can organize them into a timed session.</p>
+    <p>Signal Walk does not automatically upload your session content. Saved sessions remain on your device unless you explicitly export or share a file. Optional map and AI-related features can make third-party network requests, which are explained in this policy.</p>
   </section>
 
   <section aria-labelledby="developer-collects">
@@ -83,27 +82,42 @@
   </section>
 
   <section aria-labelledby="local-session-data">
-    <h2 id="local-session-data">Data stored on your device</h2>
-    <p>When you start a Walk Capture, Signal Walk may read and store the following information locally, depending on your device, Android version, settings, and permissions:</p>
+    <h2 id="local-session-data">What the app reads and what a saved session stores</h2>
+    <p>During a live Walk Capture, Signal Walk may read the following information, depending on your device, Android version, settings, and permissions:</p>
     <ul>
-      <li>Counts and signal strength of nearby Bluetooth advertisements, not Bluetooth device contents</li>
+      <li>Counts and signal strength of nearby Bluetooth advertisements, not Bluetooth message contents</li>
       <li>Counts and signal strength of nearby Wi-Fi broadcasts, not network traffic or content</li>
       <li>Cellular network type and signal strength, not call content or contacts</li>
       <li>Motion readings from sensors such as the accelerometer and gyroscope</li>
       <li>Environmental readings from available pressure, light, proximity, and magnetic-field sensors</li>
       <li>Location-quality indicators such as fix availability and accuracy</li>
-      <li>Session metadata, observations, events, insights, and generated reports</li>
+      <li>Battery and device-capability status used to describe the current session</li>
     </ul>
-    <p>This information is stored in the app's private directory on your device and can be deleted from within the app.</p>
+    <p>When you finish and save a session, the app writes session metadata, event records, and any generated insight text into its private app storage. That saved-session data includes items such as the session name and timestamps, device and Android version, selected privacy and location modes, sample and event counts, recorded event titles and details, and saved insight summaries.</p>
+    <p>The current saved-session files do not persist raw Bluetooth MAC addresses, Wi-Fi SSIDs or BSSIDs, precise latitude/longitude coordinates, or full cell-tower identifiers.</p>
 
-    <h3>Identifier masking and location detail</h3>
-    <p>Signal Walk is designed to reduce sensitive detail by default:</p>
+    <h3>Precise location and identifiers</h3>
+    <p>Signal Walk is designed to exclude the highest-risk identifiers from saved sessions and report exports:</p>
     <ul>
-      <li>Bluetooth device addresses are stored in masked form, such as <code>••:••:XX</code>.</li>
-      <li>Wi-Fi BSSIDs are stored in masked form, such as <code>••:••:XX</code>.</li>
-      <li>Precise GPS coordinates are not stored in Redacted or Summary-only mode.</li>
+      <li>Raw Bluetooth addresses are not written into saved-session files. Some explicit live snapshot views and exports may show only a masked form such as <code>••:••:XX</code>.</li>
+      <li>Raw Wi-Fi BSSIDs are not written into saved-session files. Some explicit live snapshot views and exports may show only a masked form such as <code>••:••:XX</code>.</li>
+      <li>If you turn on precise location for the live map, coordinates may be held in memory during the active session so the map can draw your path and event markers. The current saved-session files and report exports still omit precise latitude and longitude.</li>
     </ul>
-    <p>If you choose Detailed export mode, Signal Walk shows a warning before writing the file and explains the additional detail that will be included.</p>
+    <p>Privacy modes affect the content of saved-session report exports. They do not change the core saved-session metadata that the app keeps locally.</p>
+
+    <h3>Exports and privacy modes</h3>
+    <p>Signal Walk writes files only after you request them. The app currently supports multiple explicit export paths:</p>
+    <ul>
+      <li><strong>Saved-session reports:</strong> Detailed, Redacted, and Summary-only modes control what is included in the exported report.</li>
+      <li><strong>Live snapshot export:</strong> a text snapshot of the current live view can include the current SSID, masked BLE identifiers, masked Wi-Fi BSSIDs, radio counts, and sensor readings that are visible at export time.</li>
+      <li><strong>Recorder export:</strong> a JSON Lines recording export can include per-sample counts, sensor values, and location-quality metrics, but not precise latitude/longitude or raw BLE or Wi-Fi identifiers.</li>
+    </ul>
+    <p>The saved-session report privacy modes work as follows:</p>
+    <ul>
+      <li><strong>Detailed:</strong> session metadata, event labels, insight text, and more telemetry for technical inspection, while precise latitude/longitude, raw BLE MAC addresses, raw Wi-Fi BSSIDs, and full cell identifiers remain excluded by design.</li>
+      <li><strong>Redacted:</strong> session metadata, event counts and labels, and higher-level sensor-state labels, while network identifiers, raw sensor magnitudes, and precise coordinates are removed.</li>
+      <li><strong>Summary-only:</strong> minimal session metadata, counts, and top event labels, with no event detail, no raw sensor values, and no location data in the export.</li>
+    </ul>
   </section>
 
   <section id="third-party-requests" aria-labelledby="third-party-heading">
@@ -111,24 +125,25 @@
     <p>Signal Walk does not send session content to a developer-operated server. However, optional map features and Google's ML Kit infrastructure can make network requests to third parties.</p>
 
     <h3>Map tiles: MapLibre and OpenFreeMap</h3>
-    <p>Signal Walk uses <a href="https://maplibre.org/" rel="noopener">MapLibre</a>, an open-source mapping SDK. Online map imagery is off by default, and the map begins in a field-grid or offline mode. Map tiles are requested only after you opt in through the in-app disclosure. The default tile provider is <a href="https://openfreemap.org/" rel="noopener">OpenFreeMap</a> at <code>tiles.openfreemap.org</code>.</p>
-    <p>As with any web request, a tile provider can receive your device's IP address. It can also receive the requested tiles and map resources, which may indicate the approximate area you are viewing. The provider handles that information under its own privacy practices.</p>
-    <p>Signal Walk does not receive or store information from those tile requests and does not send session recordings or sensor histories to the map provider. Tiles may be cached on your device for offline use.</p>
-    <p>To avoid map-tile requests, keep online maps disabled. You can also use airplane mode after a supported region has been cached.</p>
+    <p>Signal Walk uses <a href="https://maplibre.org/" rel="noopener">MapLibre</a>, an open-source mapping SDK. Online map imagery is off by default, and the map begins in a field-grid or offline mode. Map resources are requested only after you opt in through the in-app disclosure or choose to download an offline region. The default provider configured in the app is <a href="https://openfreemap.org/" rel="noopener">OpenFreeMap</a>.</p>
+    <p>As with any web request, a tile provider can receive your device's IP address and the requested style, tile, or offline-region resources, which can reveal the approximate area being viewed or cached. The provider handles that information under its own privacy practices.</p>
+    <p>Signal Walk does not receive or store information from those map-network requests and does not send session recordings or sensor histories to the map provider. Map resources may be cached on your device for reuse.</p>
+    <p>To avoid map-network requests, keep online maps disabled and do not download an offline region.</p>
 
     <h3>On-device AI: Google ML Kit, AICore, and Gemini Nano</h3>
-    <p>Signal Walk uses Google's ML Kit and AICore to provide supported on-device AI analysis. AI summaries are user-initiated. The first time you choose <em>Generate insights</em> and accept the in-app disclosure, Google's infrastructure may download a compatible Gemini Nano model to your device. That delivery is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</p>
-    <p>Signal Walk is designed to perform AI inference on-device without a cloud-inference fallback. Prompt and session content is not sent to a Signal Walk developer-operated server or to Google for AI inference.</p>
-    <p>Google ML Kit may still contact Google for model delivery, compatibility information, or updates. The SDK may collect diagnostics and usage information such as device and application information, installation/device or similar identifiers, SDK and model configuration, feature events, performance and reliability measurements, input/output size metadata, error codes, and configured language. This is Google SDK diagnostics and usage measurement, not advertising or developer-added behavioral analytics, and Google states that this data is encrypted in transit.</p>
+    <p>Signal Walk uses Google's ML Kit GenAI client to provide optional on-device AI summaries on supported devices. AI summaries are user-initiated. The first time you choose <em>Generate insights</em> and accept the in-app disclosure, Google's infrastructure may download a compatible Gemini Nano model to your device. That delivery is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</p>
+    <p>Signal Walk is designed to perform AI inference on-device without a cloud-inference fallback. The app builds the AI prompt from a sanitized session summary that excludes raw SSIDs, BSSIDs, Bluetooth addresses, precise GPS coordinates, private file paths, account data, and similar direct identifiers.</p>
+    <p>Google ML Kit may still contact Google for model delivery, compatibility checks, diagnostics, and usage measurement. The SDK may collect device and application information, installation or similar identifiers, SDK and model configuration, feature events, performance and reliability measurements, input/output size metadata, error codes, and configured language. This is Google SDK behavior, not developer-added advertising or behavioral analytics.</p>
     <p>Signal Walk cannot delete information retained by Google. You can decline or disable AI summaries without affecting normal session capture, exports, or maps.</p>
-    <p>Because this feature depends on Google AICore, Signal Walk requires compatible device support, including Vulkan 1.0 graphics support. Devices that do not meet the declared requirement may not be offered the app through Google Play.</p>
+    <p>AI summary availability varies by device because it depends on compatible Google-provided on-device AI support and a successful model-availability check.</p>
   </section>
 
   <section aria-labelledby="not-collected">
     <h2 id="not-collected">Information Signal Walk does not collect</h2>
     <ul>
       <li>Your name, email address, or account information</li>
-      <li>Precise GPS coordinates in any default mode</li>
+      <li>Raw Bluetooth MAC addresses or raw Wi-Fi BSSID values in saved-session files or report exports</li>
+      <li>Precise GPS latitude and longitude in saved-session files or report exports</li>
       <li>The content of Bluetooth devices, Wi-Fi networks, or network traffic</li>
       <li>Call records, contacts, messages, photos, videos, or audio</li>
       <li>Background location, microphone data, or camera data</li>
@@ -143,8 +158,8 @@
     <h2 id="data-use">How local session data is used</h2>
     <p>Your on-device session data is used to:</p>
     <ol>
-      <li>Display live and saved session results in the app</li>
-      <li>Create exports that you explicitly request</li>
+      <li>Display live readings and saved-session results in the app</li>
+      <li>Create reports, snapshots, and recorder exports that you explicitly request</li>
       <li>Generate supported on-device AI insights that you initiate</li>
     </ol>
     <p>Signal Walk does not use your session content to train AI models, target advertising, or improve a developer-operated external service.</p>
@@ -152,7 +167,7 @@
 
   <section aria-labelledby="sharing">
     <h2 id="sharing">Exports and sharing</h2>
-    <p>Signal Walk creates an export only after you request one. Android's sharing interface is opened only after you choose to export or share. The developer cannot see what you export, where you save it, or who receives it.</p>
+    <p>Signal Walk creates a file only after you request one. Android's sharing interface is opened only after you choose to export or share. The developer cannot see what you export, where you save it, or who receives it.</p>
     <p>Once an export leaves the app, it remains under the storage, sharing, retention, and deletion controls of the destination you selected. Delete exported files separately when you no longer need them.</p>
   </section>
 
@@ -168,7 +183,7 @@
     <ul>
       <li><strong>Delete one session:</strong> Sessions → open the session → overflow menu (⋮) → <em>Delete session…</em> → confirm</li>
       <li><strong>Delete all sessions:</strong> Sessions → overflow menu (⋮) → <em>Delete all sessions…</em> → confirm</li>
-      <li><strong>Delete a supported cached map region:</strong> Open the map's offline-cache controls → <em>Delete cached region</em></li>
+      <li><strong>Delete a downloaded offline map region:</strong> Live map card → overflow menu (⋮) → <em>Delete offline region</em> → <em>Delete cached region</em></li>
     </ul>
     <p>Files already exported outside Signal Walk must be deleted from the location where you saved or shared them.</p>
   </section>
@@ -193,7 +208,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="../icon-512.png" alt="" width="30" height="30">
+      <img src="../icon-512.png" alt="" aria-hidden="true" width="30" height="30">
       <div class="footer-brand-text">
         <strong>Signal Walk</strong>
         <span>Field instrument for signal awareness</span>
