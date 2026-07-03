@@ -51,7 +51,7 @@
 <img src="../feature-graphic.png" alt="Signal Bench — Field instrument for signal awareness" class="banner" width="1024" height="500">
 
 <h1>Signal Bench — Privacy Policy</h1>
-<p class="updated">Last updated: 2026-07-01</p>
+<p class="updated">Last updated: 2026-07-02</p>
 
 <h2>Overview</h2>
 <p>Signal Bench is a passive field telemetry tool for Android. When you start a Walk Capture, it records what your phone's built-in sensors observe — nearby signal counts, motion, environmental conditions, and location quality — and stores that data locally on your device.</p>
@@ -83,16 +83,16 @@
 <p>If you choose Detailed export mode, a warning is shown before the export is written explaining what additional data will be included.</p>
 
 <h2>Third-party network requests</h2>
-<p>Although Signal Bench does not transmit your session data, the app makes outbound network requests to two third-party services. These requests do not include your session data, sensor observations, or any identifier from Signal Bench.</p>
+<p>Although Signal Bench does not transmit your session data, the app makes outbound network requests to two third-party services. These requests do not include your session data, sensor observations, or any identifier from Signal Bench. They are standard network requests made by the underlying libraries.</p>
 
 <h3>Map tile downloads (MapLibre / OpenFreeMap)</h3>
-<p>Signal Bench includes an offline field map powered by <a href="https://maplibre.org/" rel="noopener">MapLibre</a>, an open-source mapping SDK. When the map view is open and an internet connection is available, MapLibre fetches map tiles from the configured tile server. By default this is <a href="https://openfreemap.org/" rel="noopener">OpenFreeMap</a> (<code>tiles.openfreemap.org</code>).</p>
+<p>Signal Bench includes an offline field map powered by <a href="https://maplibre.org/" rel="noopener">MapLibre</a>, an open-source mapping SDK. Online maps are off by default; the map view starts in field-grid/offline mode. Only after you explicitly opt in via the in-app disclosure does MapLibre fetch map tiles from the configured tile server. By default this is <a href="https://openfreemap.org/" rel="noopener">OpenFreeMap</a> (<code>tiles.openfreemap.org</code>).</p>
 <p>Each tile request includes your device's IP address (as with any HTTP request) and the map tile coordinates (which reveal the approximate area of the map you are viewing). OpenFreeMap's privacy practices are governed by their own privacy policy. Signal Bench does not receive or store any information from these tile requests. Map tiles are cached on-device for offline use.</p>
 <p>To avoid tile requests entirely, do not open the map view, or use the app in airplane mode after tiles have been cached.</p>
 
 <h3>AI model download (ML Kit Gemini Nano)</h3>
-<p>Signal Bench uses Google's ML Kit to run on-device AI analysis of session data. Before this feature can work, the Gemini Nano model must be downloaded to your device. This download is handled by Google's ML Kit infrastructure and is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.</p>
-<p>The model download is a one-time event. After the model is available on your device, AI inference runs locally with no further network requests. Signal Bench does not send session data to Google or any external service for AI processing.</p>
+<p>Signal Bench uses Google's ML Kit to run on-device AI analysis of session data, backed by Google AICore (the system service that hosts the Gemini Nano model). AI summaries are user-initiated: the first time you tap "Generate insights" and acknowledge the in-app AI disclosure, the Gemini Nano model may be downloaded to your device. This download is handled by Google's ML Kit infrastructure and is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>. Because this feature depends on Google AICore, Signal Bench requires a device with Vulkan 1.0 graphics support; devices without it will not see Signal Bench as installable on Google Play.</p>
+<p>The model download is a one-time event. After the model is available on your device, AI inference runs locally with no further network requests, and there is no cloud fallback. Signal Bench does not send session data to Google or any external service for AI processing. Separately, Google ML Kit may collect limited SDK diagnostics and usage information &mdash; such as device and application information, installation/device identifiers, feature events, performance measurements, input/output sizes, API configuration, error codes, and configured language &mdash; for its own diagnostics and usage analytics, independent of Signal Bench. You can disable AI summaries at any time from the app drawer; declining or disabling does not affect sessions, exports, or maps.</p>
 
 <h2>Information we do not collect</h2>
 <ul>
@@ -118,15 +118,16 @@
 <p>Signal Bench does not use your session data to train AI models, improve any external service, target advertising, or for any other purpose beyond displaying your own results to you.</p>
 
 <h2>Data sharing</h2>
-<p>Signal Bench does not share your session data with any third party. Export files you create and share using your device's share sheet are under your control.</p>
+<p>Signal Bench does not share your session data with any third party. Export files you create and share using your device's share sheet are under your control. We have no visibility into what you share or with whom.</p>
 
 <h2>Data storage and deletion</h2>
-<p>Session data is stored in the app's private directory on your device. This data:</p>
+<p>Session data is stored in the app's private directory on your device (<code>context.filesDir/sessions/</code>). This data:</p>
 <ul>
   <li>Is not accessible to other apps without your device being rooted</li>
   <li>Is deleted when you uninstall Signal Bench</li>
   <li>Can be deleted at any time from within the app</li>
 </ul>
+<p><strong>Note on Android Auto Backup:</strong> Signal Bench declares <code>android:allowBackup="false"</code> in its manifest. Auto Backup and ADB backup are both fully disabled &mdash; no session data, exports, or app preferences are ever included in any on-device or cloud backup.</p>
 <h3>How to delete your data</h3>
 <ul>
   <li><strong>Delete one session:</strong> Sessions tab → tap session → overflow menu (⋮) → "Delete session…" → confirm</li>
