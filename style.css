@@ -799,11 +799,17 @@ main.legal h3 {
 }
 
 .more-screens .device-frame {
-  width: 150px;
+  width: 220px;
   flex-shrink: 0;
 }
 
+.more-screens .thumb-button {
+  order: 2;
+  margin-left: auto;
+}
+
 .more-screens-copy {
+  order: 1;
   max-width: 34rem;
 }
 
@@ -821,6 +827,19 @@ main.legal h3 {
   .more-screens {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .more-screens .thumb-button {
+    order: 1;
+    margin-left: 0;
+  }
+
+  .more-screens-copy {
+    order: 2;
+  }
+
+  .more-screens .device-frame {
+    width: 180px;
   }
 }
 
