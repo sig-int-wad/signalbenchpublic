@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signal Walk — Turn Android sensor readings into field sessions</title>
   <meta name="description" content="Take Signal Walk for a walk. Capture nearby wireless and sensor observations, review organized field sessions, and export privacy-conscious data from your Android phone.">
-  <link rel="canonical" href="https://sig-int-wad.github.io/signalwalkpublic/">
+  <link rel="canonical" href="https://signalwalk.com/">
   <meta name="theme-color" content="#063d93">
   <link rel="icon" type="image/png" href="icon-512.png">
   <link rel="apple-touch-icon" href="icon-512.png">
@@ -13,16 +13,16 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Signal Walk">
-  <meta property="og:url" content="https://sig-int-wad.github.io/signalwalkpublic/">
+  <meta property="og:url" content="https://signalwalk.com/">
   <meta property="og:title" content="Signal Walk — Turn a walk into a field session">
   <meta property="og:description" content="Capture nearby wireless and sensor observations, review what changed, and export the result from your Android phone.">
-  <meta property="og:image" content="https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png">
+  <meta property="og:image" content="https://signalwalk.com/feature-graphic.png">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="500">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Signal Walk — Turn a walk into a field session">
   <meta name="twitter:description" content="Capture nearby wireless and sensor observations, review what changed, and export the result from your Android phone.">
-  <meta name="twitter:image" content="https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png">
+  <meta name="twitter:image" content="https://signalwalk.com/feature-graphic.png">
 
   <script type="application/ld+json">
   {
@@ -32,8 +32,8 @@
     "description": "Signal Walk is an Android field instrument that organizes nearby wireless and sensor observations into sessions you can review, compare, and export.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Android",
-    "url": "https://sig-int-wad.github.io/signalwalkpublic/",
-    "image": "https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png",
+    "url": "https://signalwalk.com/",
+    "image": "https://signalwalk.com/feature-graphic.png",
     "author": {
       "@type": "Organization",
       "name": "Signal Walk",
@@ -66,7 +66,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="./" aria-label="Signal Walk home">
-      <img class="mark" src="icon-512.png" alt="">
+      <img class="mark" src="icon-512.png" alt="" aria-hidden="true">
       <span class="site-name">Signal Walk</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
@@ -110,7 +110,6 @@
       </div>
 
       <div class="hero-art" aria-label="Signal Walk app previews">
-        <!-- SCREENSHOT TODO: Replace all screenshots with current Signal Walk builds before launch. -->
         <div class="device-frame tertiary" aria-hidden="true">
           <img src="screenshots/export.png" alt="" width="480" height="1071" loading="lazy">
         </div>
@@ -146,9 +145,9 @@
       <div class="feature-row">
         <div class="feature-art">
           <button class="thumb-button" type="button" data-lightbox-src="screenshots/live.png" data-lightbox-alt="Signal Walk Live screen showing a walk capture and recent events" data-lightbox-caption="Live — nearby signals, motion, sensor status, and notable changes update in one view.">
-            <div class="device-frame">
+            <span class="device-frame">
               <img src="screenshots/live.png" alt="Signal Walk Live screen showing a walk capture and recent events" width="480" height="1071" loading="lazy">
-            </div>
+            </span>
           </button>
         </div>
         <div class="feature-copy">
@@ -162,9 +161,9 @@
       <div class="feature-row reverse">
         <div class="feature-art">
           <button class="thumb-button" type="button" data-lightbox-src="screenshots/sessions.png" data-lightbox-alt="Signal Walk Sessions screen listing saved captures" data-lightbox-caption="Sessions — return to saved captures with their duration, event count, and privacy mode intact.">
-            <div class="device-frame">
+            <span class="device-frame">
               <img src="screenshots/sessions.png" alt="Signal Walk Sessions screen listing saved captures with duration, events, and privacy mode" width="480" height="1071" loading="lazy">
-            </div>
+            </span>
           </button>
         </div>
         <div class="feature-copy">
@@ -257,9 +256,9 @@
       <div class="feature-row">
         <div class="feature-art large">
           <button class="thumb-button" type="button" data-lightbox-src="screenshots/export.png" data-lightbox-alt="Signal Walk Export screen showing export targets and privacy modes" data-lightbox-caption="Export — select a target and privacy mode before Signal Walk writes a file.">
-            <div class="device-frame">
+            <span class="device-frame">
               <img src="screenshots/export.png" alt="Signal Walk Export screen showing Detailed, Redacted, and Summary-only privacy modes" width="480" height="1071" loading="lazy">
-            </div>
+            </span>
           </button>
         </div>
         <div class="feature-copy">
@@ -291,9 +290,9 @@
       <div class="feature-row reverse">
         <div class="feature-art large">
           <button class="thumb-button" type="button" data-lightbox-src="screenshots/widget.png" data-lightbox-alt="Signal Walk home-screen widget showing status and capture actions" data-lightbox-caption="Widget — check key status and start a short capture from the Android home screen.">
-            <div class="device-frame">
+            <span class="device-frame">
               <img src="screenshots/widget.png" alt="Signal Walk home-screen widget showing BLE, Wi-Fi, motion, and location status" width="480" height="1071" loading="lazy">
-            </div>
+            </span>
           </button>
         </div>
         <div class="feature-copy">
@@ -310,9 +309,9 @@
       <div class="feature-row">
         <div class="feature-art">
           <button class="thumb-button" type="button" data-lightbox-src="screenshots/raw.png" data-lightbox-alt="Signal Walk Raw telemetry screen with expandable sensor sections" data-lightbox-caption="Raw — inspect the underlying status, radio, motion, environment, map, and device-capability details.">
-            <div class="device-frame">
+            <span class="device-frame">
               <img src="screenshots/raw.png" alt="Signal Walk Raw telemetry screen with expandable status, map, radio, motion, and device sections" width="480" height="1071" loading="lazy">
-            </div>
+            </span>
           </button>
         </div>
         <div class="feature-copy">
@@ -324,9 +323,9 @@
 
       <div class="more-screens">
         <button class="thumb-button" type="button" data-lightbox-src="screenshots/navigation.png" data-lightbox-alt="Signal Walk navigation drawer" data-lightbox-caption="Navigation — move between Live, Sessions, Export, Raw, appearance, alerts, AI summaries, and app information.">
-          <div class="device-frame small">
+          <span class="device-frame small">
             <img src="screenshots/navigation.png" alt="Signal Walk navigation drawer with Live, Sessions, Export, Raw, Appearance, Voice and Alerts, AI Summaries, and About and Safety" width="480" height="1071" loading="lazy">
-          </div>
+          </span>
         </button>
         <div class="more-screens-copy">
           <p class="eyebrow">Everything has a place</p>
@@ -380,9 +379,9 @@
       </div>
       <ul class="privacy-list">
         <li><strong>No account</strong><span>There is no Signal Walk login or cloud session library.</span></li>
-        <li><strong>Explicit exports</strong><span>Files are created only when you request them.</span></li>
-        <li><strong>Redacted by default</strong><span>Identifiers and precise coordinates are omitted from the default export mode.</span></li>
-        <li><strong>Optional network features</strong><span>Map imagery and Google model delivery are disclosed and user-initiated.</span></li>
+        <li><strong>Saved sessions stay local</strong><span>The app keeps session metadata, event records, and generated insights in private app storage.</span></li>
+        <li><strong>Exports are explicit</strong><span>Files are written only when you request a report, snapshot, or recording export.</span></li>
+        <li><strong>Optional network features</strong><span>Online maps and Google model delivery are disclosed and user-initiated.</span></li>
       </ul>
     </div>
   </section>
@@ -395,7 +394,9 @@
       </div>
       <div>
         <p>Signal Walk uses supported Android APIs and the sensors present in your device. Exact readings vary by phone model, Android version, permissions, radio state, and surroundings.</p>
-        <p>Optional on-device AI summaries require compatible Google AICore hardware and software support. Online map imagery remains opt-in and can be avoided entirely.</p>
+        <p>Signal Walk currently supports Android 12 and newer (minimum SDK 31) and is built against API level 36. Bluetooth scans, nearby Wi-Fi scans, cellular status, and precise-location map features each depend on their related runtime permissions.</p>
+        <p>If you decline some permissions, the app still opens and you can review saved sessions, manage exports, read the policies, and use the offline field-grid map mode, while the blocked channels stay unavailable until you grant access.</p>
+        <p>Online imagery is opt-in. When it stays off, the map remains in field-grid or offline mode. Optional AI summaries run only on supported devices after a disclosure and model-availability check, so availability varies by device.</p>
       </div>
     </div>
   </section>
@@ -454,7 +455,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="icon-512.png" alt="" width="30" height="30">
+      <img src="icon-512.png" alt="" aria-hidden="true" width="30" height="30">
       <div class="footer-brand-text">
         <strong>Signal Walk</strong>
         <span>Field instrument for signal awareness</span>
