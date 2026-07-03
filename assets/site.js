@@ -1,56 +1,76 @@
-(function () {
+(() => {
   "use strict";
 
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.getElementById("site-nav");
+  const navToggle = document.querySelector(".nav-toggle");
+  const siteNav = document.querySelector("#site-nav");
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  const closeNav = () => {
+    if (!navToggle || !siteNav) return;
+    navToggle.setAttribute("aria-expanded", "false");
+    siteNav.classList.remove("is-open");
+    document.body.classList.remove("nav-open");
+  };
+
+  if (navToggle && siteNav) {
+    navToggle.addEventListener("click", () => {
+      const willOpen = navToggle.getAttribute("aria-expanded") !== "true";
+      navToggle.setAttribute("aria-expanded", String(willOpen));
+      siteNav.classList.toggle("is-open", willOpen);
+      document.body.classList.toggle("nav-open", willOpen);
     });
 
-    nav.addEventListener("click", function (event) {
-      if (event.target.tagName === "A" && nav.classList.contains("is-open")) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
+    siteNav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) closeNav();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 780) closeNav();
     });
   }
 
-  var lightbox = document.getElementById("lightbox");
-  var lightboxImg = document.getElementById("lightbox-img");
-  var lightboxCaption = document.getElementById("lightbox-caption");
-  var lightboxClose = document.getElementById("lightbox-close");
-  var lastTrigger = null;
+  const lightbox = document.querySelector("#lightbox");
+  const lightboxImage = document.querySelector("#lightbox-img");
+  const lightboxCaption = document.querySelector("#lightbox-caption");
+  const lightboxClose = document.querySelector("#lightbox-close");
+  let lastTrigger = null;
 
-  if (lightbox && lightboxImg && lightboxCaption && lightboxClose) {
-    document.querySelectorAll("[data-lightbox-src]").forEach(function (trigger) {
-      trigger.addEventListener("click", function () {
-        lastTrigger = trigger;
-        lightboxImg.src = trigger.getAttribute("data-lightbox-src");
-        lightboxImg.alt = trigger.getAttribute("data-lightbox-alt") || "";
-        lightboxCaption.textContent = trigger.getAttribute("data-lightbox-caption") || "";
+  const closeLightbox = () => {
+    if (!lightbox || !lightbox.open) return;
+    lightbox.close();
+    if (lightboxImage) {
+      lightboxImage.removeAttribute("src");
+      lightboxImage.alt = "";
+    }
+    if (lastTrigger) lastTrigger.focus();
+  };
+
+  if (lightbox && lightboxImage && lightboxCaption) {
+    document.querySelectorAll("[data-lightbox-src]").forEach((button) => {
+      button.addEventListener("click", () => {
+        lastTrigger = button;
+        lightboxImage.src = button.dataset.lightboxSrc || "";
+        lightboxImage.alt = button.dataset.lightboxAlt || "Signal Walk screenshot";
+        lightboxCaption.textContent = button.dataset.lightboxCaption || "";
         lightbox.showModal();
+        lightboxClose?.focus();
       });
     });
 
-    lightboxClose.addEventListener("click", function () {
-      lightbox.close();
+    lightboxClose?.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (event) => {
+      const bounds = lightbox.getBoundingClientRect();
+      const clickedOutside =
+        event.clientX < bounds.left ||
+        event.clientX > bounds.right ||
+        event.clientY < bounds.top ||
+        event.clientY > bounds.bottom;
+      if (clickedOutside) closeLightbox();
     });
 
-    lightbox.addEventListener("click", function (event) {
-      if (event.target === lightbox) {
-        lightbox.close();
-      }
-    });
-
-    lightbox.addEventListener("close", function () {
-      lightboxImg.removeAttribute("src");
-      if (lastTrigger) {
-        lastTrigger.focus();
-        lastTrigger = null;
-      }
+    lightbox.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeLightbox();
     });
   }
 })();
