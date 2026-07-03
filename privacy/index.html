@@ -51,15 +51,15 @@
 <img src="../feature-graphic.png" alt="Signal Bench — Field instrument for signal awareness" class="banner" width="1024" height="500">
 
 <h1>Signal Bench — Privacy Policy</h1>
-<p class="updated">Last updated: 2026-07-02</p>
+<p class="updated">Last updated: 2026-07-03</p>
 
 <h2>Overview</h2>
-<p>Signal Bench is a passive field telemetry tool for Android. When you start a Walk Capture, it records what your phone's built-in sensors observe — nearby signal counts, motion, environmental conditions, and location quality — and stores that data locally on your device.</p>
-<p>Your session data never leaves your device. However, the app's map view and AI features make outbound network requests to third-party services, which is described in detail below.</p>
+<p>Signal Bench is a local-first passive field telemetry tool for Android. When you start a Walk Capture, it records what your phone's built-in sensors observe — nearby signal counts, measurements, motion, environmental conditions, and location quality — and stores sessions, observations, insights, and reports locally on your device.</p>
+<p>Your session data never leaves your device. However, the app's map view and AI features make outbound network requests to third-party services, which are described in detail below.</p>
 
 <h2>Information the developer collects</h2>
-<p><strong>We do not collect any personal information.</strong></p>
-<p>Signal Bench has no backend. No session data, sensor observations, or user information is transmitted to us, stored by us, or shared with any party by us.</p>
+<p><strong>The Signal Bench developer does not operate an account system, session-data backend, or cloud session storage.</strong></p>
+<p>No session data or sensor observations are transmitted to or stored by the Signal Bench developer. The bundled Google ML Kit SDK separately collects limited device/app information, identifiers, performance and feature-event metrics, and errors for Google's diagnostics and usage analytics, as described below.</p>
 
 <h3>On-device session data</h3>
 <p>When you start a Walk Capture, Signal Bench reads from your device's sensors and stores the following locally:</p>
@@ -83,16 +83,17 @@
 <p>If you choose Detailed export mode, a warning is shown before the export is written explaining what additional data will be included.</p>
 
 <h2>Third-party network requests</h2>
-<p>Although Signal Bench does not transmit your session data, the app makes outbound network requests to two third-party services. These requests do not include your session data, sensor observations, or any identifier from Signal Bench. They are standard network requests made by the underlying libraries.</p>
+<p>Although Signal Bench does not transmit your session data, its map and AI libraries make outbound requests. Map requests expose an IP address and requested viewport to the configured tile provider. ML Kit model delivery and SDK diagnostics contact Google; SDK diagnostics may include device/app information and identifiers. Neither path sends Signal Bench session content or sensor observations.</p>
 
 <h3>Map tile downloads (MapLibre / OpenFreeMap)</h3>
 <p>Signal Bench includes an offline field map powered by <a href="https://maplibre.org/" rel="noopener">MapLibre</a>, an open-source mapping SDK. Online maps are off by default; the map view starts in field-grid/offline mode. Only after you explicitly opt in via the in-app disclosure does MapLibre fetch map tiles from the configured tile server. By default this is <a href="https://openfreemap.org/" rel="noopener">OpenFreeMap</a> (<code>tiles.openfreemap.org</code>).</p>
-<p>Each tile request includes your device's IP address (as with any HTTP request) and the map tile coordinates (which reveal the approximate area of the map you are viewing). OpenFreeMap's privacy practices are governed by their own privacy policy. Signal Bench does not receive or store any information from these tile requests. Map tiles are cached on-device for offline use.</p>
+<p>Each tile request may include your device's IP address (as with any HTTP request), requested tiles and map resources, and viewport information that may reveal the approximate area of the map you are viewing. OpenFreeMap's privacy practices are governed by their own privacy policy. Signal Bench does not receive or store any information from these tile requests. Map tiles are cached on-device for offline use.</p>
 <p>To avoid tile requests entirely, do not open the map view, or use the app in airplane mode after tiles have been cached.</p>
+<p>Signal Bench does not send session recordings or sensor histories to the map provider. If you choose to open another maps application, that application handles the request under its own privacy practices.</p>
 
 <h3>AI model download (ML Kit Gemini Nano)</h3>
 <p>Signal Bench uses Google's ML Kit to run on-device AI analysis of session data, backed by Google AICore (the system service that hosts the Gemini Nano model). AI summaries are user-initiated: the first time you tap "Generate insights" and acknowledge the in-app AI disclosure, the Gemini Nano model may be downloaded to your device. This download is handled by Google's ML Kit infrastructure and is governed by <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>. Because this feature depends on Google AICore, Signal Bench requires a device with Vulkan 1.0 graphics support; devices without it will not see Signal Bench as installable on Google Play.</p>
-<p>The model download is a one-time event. After the model is available on your device, AI inference runs locally with no further network requests, and there is no cloud fallback. Signal Bench does not send session data to Google or any external service for AI processing. Separately, Google ML Kit may collect limited SDK diagnostics and usage information &mdash; such as device and application information, installation/device identifiers, feature events, performance measurements, input/output sizes, API configuration, error codes, and configured language &mdash; for its own diagnostics and usage analytics, independent of Signal Bench. You can disable AI summaries at any time from the app drawer; declining or disabling does not affect sessions, exports, or maps.</p>
+<p>The model download is initiated by AI feature use. AI inference is intended to run on-device through Google ML Kit/AICore with no cloud fallback, and prompt and session content is not sent to a Signal Bench developer-operated server or to Google for AI inference. Google ML Kit may still contact Google for model or compatibility updates and may collect SDK diagnostics and usage information &mdash; such as device and application information, installation/device or similar identifiers, SDK/API/model/feature configuration, feature events, performance and reliability measurements, input/output size metadata, error codes, and configured language &mdash; for diagnostics and usage measurement. This is Google SDK diagnostics, not advertising or developer-added behavioral analytics, and is encrypted in transit. Signal Bench cannot delete information retained by Google. You can disable AI summaries at any time from the app drawer; declining or disabling does not affect sessions, exports, or maps.</p>
 
 <h2>Information we do not collect</h2>
 <ul>
@@ -102,7 +103,11 @@
   <li>We do not collect call records, contacts, or messages</li>
   <li>We do not collect photos, videos, or audio</li>
   <li>We do not track your location across sessions</li>
-  <li>We do not use analytics, advertising SDKs, or crash reporting services</li>
+  <li>We do not use an advertising SDK or the Android Advertising ID, and we do not sell personal information</li>
+  <li>We do not add crash-reporting services or developer behavioral analytics; Google ML Kit includes its own disclosed diagnostics and usage measurement</li>
+  <li>We do not collect background location, microphone data, or camera data</li>
+  <li>We do not pair with, connect to, advertise as, spoof, jam, or intercept Bluetooth devices</li>
+  <li>We do not join Wi-Fi networks or intercept Wi-Fi traffic</li>
   <li>We do not read data from other apps on your device</li>
   <li>We do not receive or store any data from map tile requests</li>
   <li>We do not receive or store any data from the ML Kit model download</li>
@@ -118,7 +123,7 @@
 <p>Signal Bench does not use your session data to train AI models, improve any external service, target advertising, or for any other purpose beyond displaying your own results to you.</p>
 
 <h2>Data sharing</h2>
-<p>Signal Bench does not share your session data with any third party. Export files you create and share using your device's share sheet are under your control. We have no visibility into what you share or with whom.</p>
+<p>Signal Bench does not share your session data with any third party. Android sharing occurs only after you explicitly export or share. Export files remain wherever you save or share them until you delete them under the controls provided by that destination. We have no visibility into what you share or with whom.</p>
 
 <h2>Data storage and deletion</h2>
 <p>Session data is stored in the app's private directory on your device (<code>context.filesDir/sessions/</code>). This data:</p>
@@ -132,8 +137,9 @@
 <ul>
   <li><strong>Delete one session:</strong> Sessions tab → tap session → overflow menu (⋮) → "Delete session…" → confirm</li>
   <li><strong>Delete all sessions:</strong> Sessions tab → overflow menu (⋮) → "Delete all sessions…" → confirm</li>
+  <li><strong>Delete a supported cached map region:</strong> Open the map's offline-cache controls → "Delete cached region"</li>
 </ul>
-<p>Both actions permanently delete data from your device. Export files you have already saved outside the app must be deleted separately.</p>
+<p>These actions delete the supported local app data from your device. Export files you have already saved outside the app must be deleted separately.</p>
 
 <h2>Children's privacy</h2>
 <p>Signal Bench is not directed at children under 13 and we do not knowingly collect any information from children.</p>
