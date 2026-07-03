@@ -1,15 +1,15 @@
-# Signal Bench
+# Signal Walk
 
 **Field instrument for signal awareness.**
 
-Take Signal Bench for a walk, capture nearby activity, and export the data.
+Take Signal Walk for a walk, capture nearby activity, and export the data.
 
-This repository hosts the public website for Signal Bench, an Android app for observing the nearby wireless environment (Bluetooth, Wi-Fi, location, and sensor information available through Android) in organized, exportable sessions.
+This repository hosts the public website for Signal Walk, an Android app for observing the nearby wireless environment (Bluetooth, Wi-Fi, location, and sensor information available through Android) in organized, exportable sessions.
 
-**Live site:** https://sig-int-wad.github.io/signalbenchpublic/
+**Live site:** https://sig-int-wad.github.io/signalwalkpublic/
 
-- [Privacy Policy](https://sig-int-wad.github.io/signalbenchpublic/privacy/)
-- [Responsible Use](https://sig-int-wad.github.io/signalbenchpublic/responsible-use/)
+- [Privacy Policy](https://sig-int-wad.github.io/signalwalkpublic/privacy/)
+- [Responsible Use](https://sig-int-wad.github.io/signalwalkpublic/responsible-use/)
 
 ## What's in this repository
 
@@ -24,7 +24,7 @@ feature-graphic.png     Banner image
 icon-512.png            App icon / favicon
 ```
 
-This is the **public website only**. It does not contain the Signal Bench Android application source code.
+This is the **public website only**. It does not contain the Signal Walk Android application source code.
 
 ## Local preview
 
