@@ -1,37 +1,50 @@
-# Signal Walk
+# Signal Walk public website rewrite
 
-**Field instrument for signal awareness.**
+Field instrument for signal awareness.
 
-Take Signal Walk for a walk, capture nearby activity, and export the data.
+This package contains a complete static copy of the rewritten Signal Walk public site:
 
-This repository hosts the public website for Signal Walk, an Android app for observing the nearby wireless environment (Bluetooth, Wi-Fi, location, and sensor information available through Android) in organized, exportable sessions.
+- `index.html` — product landing page
+- `privacy/index.html` — privacy policy
+- `responsible-use/index.html` — responsible-use guidance
+- `style.css` — shared responsive styles
+- `assets/site.js` — mobile navigation and screenshot lightbox
+- `icon-512.png` and `feature-graphic.png` — current public brand assets
+- `screenshots/` — current public screenshots, included only so the package previews correctly
+- `SCREENSHOT_UPDATE_CHECKLIST.md` — required image replacements before launch
+- `IMPLEMENTATION_NOTES.md` — copy, legal, and release-review notes
 
-**Live site:** https://sig-int-wad.github.io/signalwalkpublic/
 
-- [Privacy Policy](https://sig-int-wad.github.io/signalwalkpublic/privacy/)
-- [Responsible Use](https://sig-int-wad.github.io/signalwalkpublic/responsible-use/)
+## Contact addresses included
 
-## What's in this repository
+- `support@signalwalk.com` — Play Store support and user questions
+- `privacy@signalwalk.com` — privacy questions and requests
+- `security@signalwalk.com` — vulnerability reports
+- `hello@signalwalk.com` — general contact
+- `developer@signalwalk.com` — developer identity and technical ownership
 
-Static HTML and CSS only — no build step, no frameworks, no analytics, no tracking, no remote fonts.
+## Important screenshot warning
 
-```
-index.html              Home page
-privacy/index.html      Privacy policy
-responsible-use/index.html   Responsible-use guidance
-style.css               Shared stylesheet
-feature-graphic.png     Banner image
-icon-512.png            App icon / favicon
-```
+The screenshots currently included in `screenshots/` came from the live public repository and still show legacy Signal Bench app screens. Replace all six screenshots with current Signal Walk captures before publishing this package.
 
-This is the **public website only**. It does not contain the Signal Walk Android application source code.
+## Apply to the public repository
+
+Copy the package over the matching paths in `signalwalkpublic`. The filenames and directory structure match the current site.
 
 ## Local preview
 
-Serve the folder with any static file server, for example:
+From the site root:
 
-```sh
-npx serve .
+```bash
+python -m http.server 8000
 ```
 
-Then open `http://localhost:3000/`.
+Open `http://localhost:8000/`.
+
+## Before publishing
+
+1. Replace every screenshot with a current Signal Walk build.
+2. Confirm the banner and icon match the final Play Store assets.
+3. Verify the Privacy Policy against the final signed release build and Google Play Data safety answers.
+4. Test navigation, screenshot lightboxes, keyboard focus, and mobile layouts.
+5. Update the GitHub repository description if it still says Signal Bench.

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signal Walk — Responsible Use</title>
-  <meta name="description" content="Signal Walk responsible-use guidance — appropriate and inappropriate uses of the app.">
+  <meta name="description" content="Responsible-use guidance for Signal Walk, an Android field instrument for learning about nearby wireless and sensor conditions.">
   <link rel="canonical" href="https://sig-int-wad.github.io/signalwalkpublic/responsible-use/">
-  <meta name="theme-color" content="#023c9a">
+  <meta name="theme-color" content="#063d93">
   <link rel="icon" type="image/png" href="../icon-512.png">
   <link rel="apple-touch-icon" href="../icon-512.png">
   <link rel="stylesheet" href="../style.css">
@@ -15,18 +15,20 @@
   <meta property="og:site_name" content="Signal Walk">
   <meta property="og:url" content="https://sig-int-wad.github.io/signalwalkpublic/responsible-use/">
   <meta property="og:title" content="Signal Walk — Responsible Use">
-  <meta property="og:description" content="Signal Walk responsible-use guidance — appropriate and inappropriate uses of the app.">
+  <meta property="og:description" content="Use Signal Walk for learning, testing, and personal field observation—not surveillance, identification, or threat detection.">
   <meta property="og:image" content="https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Signal Walk — Responsible Use">
-  <meta name="twitter:description" content="Signal Walk responsible-use guidance — appropriate and inappropriate uses of the app.">
+  <meta name="twitter:description" content="Use Signal Walk for learning, testing, and personal field observation—not surveillance, identification, or threat detection.">
   <meta name="twitter:image" content="https://sig-int-wad.github.io/signalwalkpublic/feature-graphic.png">
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="../">
+    <a class="brand" href="../" aria-label="Signal Walk home">
       <img class="mark" src="../icon-512.png" alt="">
       <span class="site-name">Signal Walk</span>
     </a>
@@ -45,79 +47,111 @@
   </div>
 </header>
 
-<main class="legal">
-<a class="back" href="../">&larr; Signal Walk</a>
+<main class="legal" id="main">
+  <a class="back" href="../">&larr; Back to Signal Walk</a>
 
-<img src="../feature-graphic.png" alt="Signal Walk — Field instrument for signal awareness" class="banner" width="1024" height="500">
+  <!-- ASSET TODO: Replace this banner if the current image still uses legacy branding. -->
+  <img src="../feature-graphic.png" alt="Signal Walk — Field instrument for signal awareness" class="banner" width="1024" height="500">
 
-<h1>Signal Walk — Responsible Use</h1>
-<p class="updated">Last updated: 2026-07-01</p>
+  <div class="legal-header">
+    <p class="eyebrow">Use the instrument carefully</p>
+    <h1>Signal Walk Responsible Use</h1>
+    <p class="updated">Last updated: July 3, 2026</p>
+  </div>
 
-<h2>What Signal Walk does</h2>
-<p>Signal Walk is a passive field telemetry tool. When you start a Walk Capture, it records what your phone observes from its built-in sensors:</p>
-<ul>
-  <li>How many nearby Bluetooth advertisements your phone detected</li>
-  <li>How many nearby Wi-Fi networks were broadcasting</li>
-  <li>Cellular signal type and strength</li>
-  <li>Motion and environmental conditions</li>
-  <li>Location fix quality</li>
-</ul>
-<p>It does this passively — it does not connect to any device or network, does not inspect content, and does not transmit data.</p>
+  <aside class="legal-summary" aria-labelledby="purpose-at-a-glance">
+    <h2 id="purpose-at-a-glance">Purpose at a glance</h2>
+    <p>Signal Walk is designed for learning, testing, and personal observation of ambient wireless and sensor conditions. It is not a surveillance, identity, threat-detection, or forensic system.</p>
+  </aside>
 
-<h2>What Signal Walk cannot do</h2>
-<ul>
-  <li><strong>Cannot identify people.</strong> Radio signal counts do not map to individuals.</li>
-  <li><strong>Cannot prove events.</strong> Observations are snapshots of ambient conditions, not evidence of any intent or cause.</li>
-  <li><strong>Cannot detect threats.</strong> Signal Walk has no threat model. "More signals" is not a warning.</li>
-  <li><strong>Cannot tell you if someone is surveilling you.</strong> Nearby Bluetooth or Wi-Fi activity is normal in any populated area.</li>
-  <li><strong>Cannot be used as evidence.</strong> Signal Walk results are not forensic data, are not authenticated, and are not admissible in any proceeding.</li>
-</ul>
+  <section aria-labelledby="what-it-does">
+    <h2 id="what-it-does">What Signal Walk does</h2>
+    <p>When you start a Walk Capture, Signal Walk organizes readings made available by your Android phone into a timed field session. Depending on your device and permissions, the session may include:</p>
+    <ul>
+      <li>Counts and signal strength of nearby Bluetooth advertisements</li>
+      <li>Counts and signal strength of nearby Wi-Fi broadcasts</li>
+      <li>Cellular network type and signal strength</li>
+      <li>Motion and environmental sensor readings</li>
+      <li>Location-fix availability and accuracy</li>
+      <li>Notable changes recorded during the session</li>
+    </ul>
+    <p>Signal Walk observes through supported Android APIs. It does not join nearby networks, connect to nearby devices, or inspect message, call, or network-traffic content.</p>
+    <p>Session content is kept locally unless you export or share it. Optional online map imagery and Google model-delivery or SDK-diagnostic requests are disclosed separately in the <a href="../privacy/">Privacy Policy</a>.</p>
+  </section>
 
-<h2>Appropriate uses</h2>
-<p>Signal Walk is appropriate for:</p>
-<ul>
-  <li>Personal curiosity about ambient signal environments</li>
-  <li>Learning how your phone's sensors work</li>
-  <li>Informal comparison of signal conditions between locations</li>
-  <li>Hobbyist RF exploration</li>
-  <li>Testing your own network environment (on property you control)</li>
-  <li>Debugging sensor availability on specific hardware</li>
-  <li>Open-source software development and research</li>
-</ul>
+  <section aria-labelledby="appropriate-uses">
+    <h2 id="appropriate-uses">Appropriate uses</h2>
+    <p>Signal Walk is appropriate for activities such as:</p>
+    <ul class="positive-list">
+      <li>Learning what wireless and sensor information Android makes available</li>
+      <li>Comparing ambient conditions between places or times</li>
+      <li>Testing your own device, network environment, or property</li>
+      <li>Debugging sensor availability and permission behavior on hardware you control</li>
+      <li>Personal field notes and hobbyist wireless exploration</li>
+      <li>Software development, accessibility testing, education, and open-source research</li>
+    </ul>
+  </section>
 
-<h2>Inappropriate uses</h2>
-<div class="warning">
-  <p><strong>Do not use Signal Walk to:</strong></p>
-  <ul>
-    <li><strong>Surveil, track, monitor, or follow another person</strong> without their knowledge and explicit consent</li>
-    <li><strong>Harass or stalk</strong> any individual</li>
-    <li><strong>Compile profiles of nearby individuals</strong> based on signal patterns</li>
-    <li><strong>Draw conclusions about specific people</strong> from signal observations</li>
-    <li><strong>Use session results to accuse, implicate, or report</strong> a specific person</li>
-    <li><strong>Present session results as evidence</strong> in any legal, employment, or safety context</li>
-    <li><strong>Scan environments you do not own or have permission to be in</strong> for purposes beyond your own curiosity</li>
-    <li><strong>Use in professional surveillance, investigation, or law enforcement</strong> workflows</li>
-  </ul>
-</div>
+  <section aria-labelledby="limits">
+    <h2 id="limits">What the results cannot tell you</h2>
+    <ul>
+      <li><strong>They do not identify people.</strong> A signal count is not a person count, and a radio observation does not establish who carried or operated a device.</li>
+      <li><strong>They do not explain intent or cause.</strong> Signal changes can have many ordinary technical and environmental explanations.</li>
+      <li><strong>They do not detect threats.</strong> More devices, stronger signals, or unusual readings are not warnings by themselves.</li>
+      <li><strong>They do not establish surveillance.</strong> Bluetooth and Wi-Fi activity is normal in homes, offices, vehicles, and public spaces.</li>
+      <li><strong>They are not validated forensic evidence.</strong> Signal Walk sessions are not authenticated, calibrated, or designed for legal, employment, disciplinary, or safety-critical decisions.</li>
+    </ul>
+  </section>
 
-<h2>A note on passive observation</h2>
-<p>Walking in a public place and observing ambient signals is analogous to looking around. Signal Walk records counts and signal strengths — general environmental data. This is not the same as recording, photographing, or identifying individuals.</p>
-<p>However, context matters. Using a tool repeatedly to build a pattern of observations about a specific person's home, workplace, or routine — even passively — can constitute harassment or stalking regardless of the tool's technical capabilities.</p>
-<p>Use Signal Walk for your own learning and exploration. If a use case involves monitoring another person, stop and do not proceed.</p>
+  <section aria-labelledby="inappropriate-uses">
+    <h2 id="inappropriate-uses">Inappropriate uses</h2>
+    <div class="warning">
+      <p><strong>Do not use Signal Walk to:</strong></p>
+      <ul>
+        <li>Surveil, track, monitor, or follow another person without their informed consent</li>
+        <li>Harass, intimidate, or stalk an individual</li>
+        <li>Build a profile of a person's home, workplace, routine, relationships, or movements</li>
+        <li>Attribute a signal, device, event, or behavior to a specific person without independent and lawful evidence</li>
+        <li>Accuse, implicate, report, discipline, or make safety decisions about someone based on a Signal Walk session</li>
+        <li>Collect observations in restricted or private environments without permission</li>
+        <li>Support professional surveillance, covert investigation, or law-enforcement activity</li>
+        <li>Interfere with, access, disrupt, jam, spoof, or attempt to compromise a device or network</li>
+      </ul>
+    </div>
+  </section>
 
-<h2>Data handling reminder</h2>
-<p>Signal Walk is designed to keep data on your device. When you export data, you are responsible for how you handle and share the export file. Sharing detailed session exports publicly or with third parties without considering the privacy of any people who may have been nearby during the session is your responsibility.</p>
-<p>The default Redacted export mode removes identifiers. Use it unless you have a specific technical reason to need the Detailed export.</p>
+  <section aria-labelledby="public-context">
+    <h2 id="public-context">Public spaces still require judgment</h2>
+    <p>Ambient wireless activity may be observable in a public place, but context and repetition matter. A single personal field session is different from repeatedly collecting observations around a particular person's home, workplace, vehicle, or routine.</p>
+    <p>Passive technology does not make every use harmless. A pattern of observation can become invasive, intimidating, or unlawful even when the app does not identify anyone by itself.</p>
+    <p>Use Signal Walk to understand environments and devices. When a proposed use centers on another person, stop and choose a different approach.</p>
+  </section>
 
-<h2>Contact</h2>
-<p>For questions about appropriate use, contact the project maintainer via the contact information in the Google Play Store listing.</p>
+  <section aria-labelledby="exports">
+    <h2 id="exports">Handle exports carefully</h2>
+    <p>You are responsible for files you create, retain, and share. Before sending an export to another person or service, consider whether the file contains more detail than the recipient needs.</p>
+    <p>Use the default <strong>Redacted</strong> export mode for ordinary sharing. Choose Detailed mode only for a specific technical reason and keep the file limited to trusted people and systems. Summary-only mode provides the smallest footprint.</p>
+    <p>Delete exported files when they are no longer needed. Removing a session from Signal Walk does not delete copies already saved elsewhere.</p>
+  </section>
 
+  <section aria-labelledby="common-sense-rule">
+    <h2 id="common-sense-rule">A simple rule</h2>
+    <div class="note">
+      <p><strong>Explore signals, not people.</strong> Use Signal Walk to learn what your phone can observe and how environments differ. Do not use it to make claims about who was present, what someone was doing, or whether a person posed a risk.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <p>For product support or questions about responsible use, email <a href="mailto:support@signalwalk.com">support@signalwalk.com</a>.</p>
+    <p>For general project inquiries, email <a href="mailto:hello@signalwalk.com">hello@signalwalk.com</a>. To report a potential vulnerability, email <a href="mailto:security@signalwalk.com">security@signalwalk.com</a>.</p>
+  </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="../icon-512.png" alt="" width="28" height="28">
+      <img src="../icon-512.png" alt="" width="30" height="30">
       <div class="footer-brand-text">
         <strong>Signal Walk</strong>
         <span>Field instrument for signal awareness</span>
@@ -126,12 +160,12 @@
     <ul class="footer-links">
       <li><a href="../">Home</a></li>
       <li><a href="../privacy/">Privacy Policy</a></li>
+      <li><a href="mailto:support@signalwalk.com">Support</a></li>
     </ul>
     <p class="footer-copyright">&copy; 2026 Signal Walk.</p>
   </div>
 </footer>
 
 <script src="../assets/site.js" defer></script>
-
 </body>
 </html>
