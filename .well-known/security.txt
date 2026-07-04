@@ -1,0 +1,4 @@
+Contact: mailto:security@signalwalk.com
+Expires: 2027-07-03T23:59:59Z
+Preferred-Languages: en
+Canonical: https://signalwalk.com/.well-known/security.txt
