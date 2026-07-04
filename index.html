@@ -1,493 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signal Walk — Turn Android sensor readings into field sessions</title>
-  <meta name="description" content="Take Signal Walk for a walk. Capture nearby wireless and sensor observations, review organized field sessions, and export privacy-conscious data from your Android phone.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Signal Walk — Explore Android wireless and sensor readings</title>
+  <meta name="description" content="Turn nearby wireless activity and Android sensor readings into organized sessions you can review, compare, and export. Request access to the Google Play closed test.">
   <link rel="canonical" href="https://signalwalk.com/">
   <meta name="theme-color" content="#063d93">
-  <link rel="icon" type="image/png" href="icon-512.png">
-  <link rel="apple-touch-icon" href="icon-512.png">
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="icon" type="image/png" href="icon-48.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="site-final.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Signal Walk">
   <meta property="og:url" content="https://signalwalk.com/">
-  <meta property="og:title" content="Signal Walk — Turn a walk into a field session">
-  <meta property="og:description" content="Capture nearby wireless and sensor observations, review what changed, and export the result from your Android phone.">
-  <meta property="og:image" content="https://signalwalk.com/feature-graphic.png">
+  <meta property="og:title" content="Signal Walk — See what your Android phone can observe">
+  <meta property="og:description" content="Organize nearby wireless activity and Android sensor readings into sessions you can review and export.">
+  <meta property="og:image" content="https://signalwalk.com/social-card.jpg">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="Signal Walk, an Android field instrument for signal awareness">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Signal Walk — Turn a walk into a field session">
-  <meta name="twitter:description" content="Capture nearby wireless and sensor observations, review what changed, and export the result from your Android phone.">
-  <meta name="twitter:image" content="https://signalwalk.com/feature-graphic.png">
-
+  <meta name="twitter:title" content="Signal Walk — See what your Android phone can observe">
+  <meta name="twitter:description" content="Organize nearby wireless activity and Android sensor readings into sessions you can review and export.">
+  <meta name="twitter:image" content="https://signalwalk.com/social-card.jpg">
+  <meta name="twitter:image:alt" content="Signal Walk, an Android field instrument for signal awareness">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Signal Walk",
-    "description": "Signal Walk is an Android field instrument that organizes nearby wireless and sensor observations into sessions you can review, compare, and export.",
+    "description": "An Android field instrument that organizes nearby wireless and sensor observations into sessions you can review, compare, and export.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Android",
     "url": "https://signalwalk.com/",
-    "image": "https://signalwalk.com/feature-graphic.png",
+    "image": "https://signalwalk.com/social-card.jpg",
     "author": {
       "@type": "Organization",
       "name": "Signal Walk",
       "email": "developer@signalwalk.com"
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "support@signalwalk.com"
-      },
-      {
-        "@type": "ContactPoint",
-        "contactType": "privacy",
-        "email": "privacy@signalwalk.com"
-      },
-      {
-        "@type": "ContactPoint",
-        "contactType": "security",
-        "email": "security@signalwalk.com"
-      }
-    ]
+    }
   }
   </script>
 </head>
 <body>
-
 <a class="skip-link" href="#main">Skip to content</a>
-
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="./" aria-label="Signal Walk home">
-      <img class="mark" src="icon-512.png" alt="" aria-hidden="true">
-      <span class="site-name">Signal Walk</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+    <a class="brand" href="./" aria-label="Signal Walk home"><img class="mark" src="icon-48.png" alt="" width="40" height="40"><span class="site-name">Signal Walk</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
     <nav class="site-nav" id="site-nav" aria-label="Primary">
       <ul class="nav-links">
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="early-access/">Early Access</a></li>
+        <li><a href="privacy/">Privacy</a></li>
         <li><a href="responsible-use/">Responsible Use</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Support</a></li>
       </ul>
-      <div class="header-actions">
-        <span class="header-cta badge-soon">Coming to Google Play</span>
-        <a class="button header-signup" href="early-access/">Early Access Sign Up</a>
-      </div>
+      <div class="header-actions"><span class="header-cta badge-soon">Closed test on Google Play</span><a class="button header-signup" href="early-access/">Join the closed test</a></div>
     </nav>
   </div>
-  <div class="early-access-strip" role="region" aria-label="Early access sign up">
+  <div class="early-access-strip" data-announcement role="region" aria-label="Early access announcement">
     <div class="header-inner early-access-strip-inner">
-      <a class="early-access-strip-text" href="early-access/">Early Access is open for the Signal Walk Android closed test. Sign up now.</a>
+      <a class="early-access-strip-text" href="early-access/">Signal Walk’s Android closed test is open. Request early access.</a>
+      <button class="announcement-dismiss" data-dismiss-announcement type="button" aria-label="Dismiss early access announcement">&times;</button>
     </div>
   </div>
 </header>
-
 <main id="main">
-
   <section class="hero">
     <div class="section-inner hero-grid">
       <div class="hero-copy-block">
         <p class="eyebrow">Android field instrument</p>
-        <h1>Turn a walk into a field session.</h1>
-        <p class="hero-copy">Signal Walk brings the wireless and sensor readings already available to your Android phone into one clear, timed capture. Watch the environment change, save the session, and export it for deeper analysis.</p>
-
+        <h1>See what your Android phone can observe.</h1>
+        <p class="hero-copy">Signal Walk turns nearby wireless activity and phone sensor readings into a clear, timed session you can review, compare, and export—without creating a Signal Walk account.</p>
         <ul class="hero-list">
-          <li>See Bluetooth, Wi-Fi, cellular, motion, environmental, and location-quality readings together</li>
-          <li>Preserve notable changes in an organized session you can revisit</li>
-          <li>Choose the right privacy level before creating an export</li>
+          <li>Follow Bluetooth, Wi-Fi, cellular, motion, environmental, and location-quality readings together</li>
+          <li>Save notable changes as an organized session instead of losing the live moment</li>
+          <li>Choose a privacy-conscious export mode before creating a file</li>
         </ul>
-
-        <div class="cta-row">
-          <span class="badge-soon">Coming to Google Play</span>
-          <a class="button secondary" href="#how-it-works">Explore the workflow</a>
-        </div>
-        <p class="reassurance">No account · Local session storage · User-controlled exports</p>
+        <div class="cta-row"><a class="button" href="early-access/">Join the closed test</a><a class="button secondary" href="#how-it-works">See how it works</a></div>
+        <p class="reassurance">No Signal Walk account · Local session storage · User-controlled exports</p>
       </div>
-
-      <div class="hero-art" aria-label="Signal Walk app previews">
-        <div class="device-frame tertiary" aria-hidden="true">
-          <img src="screenshots/export.png" alt="" width="480" height="1071" loading="lazy">
-        </div>
-        <div class="device-frame secondary" aria-hidden="true">
-          <img src="screenshots/widget.png" alt="" width="480" height="1071" loading="lazy">
-        </div>
-        <div class="device-frame primary">
-          <img src="screenshots/live.png" alt="Signal Walk Live screen showing a walk capture, nearby signal counts, sensor status, and recent events" width="480" height="1071" loading="eager" fetchpriority="high">
-        </div>
+      <div class="hero-art">
+        <div class="device-frame primary"><img src="screenshots/live.png" alt="Signal Walk Live screen showing an active walk capture, nearby signal counts, sensor status, and recent events" width="480" height="1071" loading="eager" fetchpriority="high"></div>
       </div>
     </div>
   </section>
-
   <section class="trust-strip" aria-label="Product principles">
-    <div class="section-inner">
-      <ul>
-        <li><strong>Passive observation</strong><span>No joining or connecting to nearby devices or networks</span></li>
-        <li><strong>Local-first sessions</strong><span>Your saved captures remain in the app's private storage</span></li>
-        <li><strong>Clear export choices</strong><span>Redacted mode is the share-conscious default</span></li>
-        <li><strong>No account required</strong><span>Open the app and start exploring</span></li>
-      </ul>
-    </div>
+    <div class="section-inner"><ul>
+      <li><strong>Passive observation</strong><span>No joining nearby devices or networks</span></li>
+      <li><strong>Local-first sessions</strong><span>Saved captures remain in private app storage</span></li>
+      <li><strong>Explicit exports</strong><span>You choose the file and privacy mode</span></li>
+      <li><strong>No in-app account</strong><span>Capture without a Signal Walk login</span></li>
+    </ul></div>
   </section>
-
-  <section class="sec-intro" id="features">
-    <div class="section-inner">
-      <div class="section-heading">
-        <p class="eyebrow">A usable record of the moment</p>
-        <h2>From ambient readings to useful context</h2>
-        <p class="section-lead">A phone exposes a stream of disconnected measurements. Signal Walk gives them a shared timeline so you can understand what was available, what changed, and when it happened.</p>
-      </div>
-
-      <div class="feature-row">
-        <div class="feature-art">
-          <button class="thumb-button" type="button" data-lightbox-src="screenshots/live.png" data-lightbox-alt="Signal Walk Live screen showing a walk capture and recent events" data-lightbox-caption="Live — nearby signals, motion, sensor status, and notable changes update in one view.">
-            <span class="device-frame">
-              <img src="screenshots/live.png" alt="Signal Walk Live screen showing a walk capture and recent events" width="480" height="1071" loading="lazy">
-            </span>
-          </button>
-        </div>
-        <div class="feature-copy">
-          <p class="eyebrow">Live</p>
-          <h3>See the environment change as you move</h3>
-          <p>Start a Walk Capture and follow nearby signal counts, motion, environmental readings, location quality, and notable events from one focused screen.</p>
-          <p class="supporting">Signal Walk does not invent meaning for a reading. It organizes what Android makes available so you can inspect the session in context.</p>
-        </div>
-      </div>
-
-      <div class="feature-row reverse">
-        <div class="feature-art">
-          <button class="thumb-button" type="button" data-lightbox-src="screenshots/sessions.png" data-lightbox-alt="Signal Walk Sessions screen listing saved captures" data-lightbox-caption="Sessions — return to saved captures with their duration, event count, and privacy mode intact.">
-            <span class="device-frame">
-              <img src="screenshots/sessions.png" alt="Signal Walk Sessions screen listing saved captures with duration, events, and privacy mode" width="480" height="1071" loading="lazy">
-            </span>
-          </button>
-        </div>
-        <div class="feature-copy">
-          <p class="eyebrow">Sessions</p>
-          <h3>Keep the result, not just the moment</h3>
-          <p>Each capture becomes a session with a clear beginning and end, the readings available on your device, and the notable changes recorded along the way.</p>
-          <ul class="check-list compact">
-            <li>Review a walk after you return</li>
-            <li>Compare different places or times</li>
-            <li>Keep the original session separate from exported copies</li>
-            <li>Delete individual sessions or clear them all from the app</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="sec-how band" id="how-it-works">
     <div class="section-inner">
-      <div class="section-heading centered">
-        <p class="eyebrow">Simple by design</p>
-        <h2>One walk. Three steps.</h2>
-        <p class="section-lead">Exact readings depend on your phone, Android version, granted permissions, and the surrounding environment.</p>
-      </div>
-
+      <div class="section-heading centered"><p class="eyebrow">Turn a walk into a field session</p><h2>One walk. Three steps.</h2><p class="section-lead">Available readings depend on your phone, Android version, granted permissions, and surroundings.</p></div>
       <ol class="steps">
-        <li>
-          <span class="step-number" aria-hidden="true">1</span>
-          <h3>Start a capture</h3>
-          <p>Signal Walk begins a timed session using the supported wireless and sensor readings exposed by Android.</p>
-        </li>
-        <li>
-          <span class="step-number" aria-hidden="true">2</span>
-          <h3>Take the walk</h3>
-          <p>Move through the environment while the Live screen organizes counts, readings, status, and notable changes.</p>
-        </li>
-        <li>
-          <span class="step-number" aria-hidden="true">3</span>
-          <h3>Review or export</h3>
-          <p>Return to the saved session, compare what changed, or create a privacy-conscious file for another tool.</p>
-        </li>
+        <li><span class="step-number" aria-hidden="true">1</span><h3>Start a capture</h3><p>Begin a timed session using wireless and sensor readings supported by your phone.</p></li>
+        <li><span class="step-number" aria-hidden="true">2</span><h3>Take the walk</h3><p>Follow readings, status, and notable changes together as the environment changes.</p></li>
+        <li><span class="step-number" aria-hidden="true">3</span><h3>Review or export</h3><p>Return to the saved session or create a file using the privacy mode you select.</p></li>
       </ol>
     </div>
   </section>
-
-  <section class="sec-toolkit">
+  <section class="sec-intro" id="features">
     <div class="section-inner">
-      <div class="section-heading">
-        <p class="eyebrow">The field kit</p>
-        <h2>Useful at a glance. Detailed when you need it.</h2>
-      </div>
-
-      <div class="tool-grid">
-        <article class="tool-card">
-          <span class="tool-number">01</span>
-          <h3>Live capture</h3>
-          <p>A focused dashboard for nearby wireless activity, phone movement, environment sensors, and recent events.</p>
-        </article>
-        <article class="tool-card">
-          <span class="tool-number">02</span>
-          <h3>Saved sessions</h3>
-          <p>Keep a durable record of a walk so it can be reviewed instead of disappearing when the live view closes.</p>
-        </article>
-        <article class="tool-card">
-          <span class="tool-number">03</span>
-          <h3>Privacy-aware exports</h3>
-          <p>Choose Detailed, Redacted, or Summary-only output based on how you plan to use or share the result.</p>
-        </article>
-        <article class="tool-card">
-          <span class="tool-number">04</span>
-          <h3>Home-screen widget</h3>
-          <p>Check key status indicators or launch a short capture without navigating through the full app first.</p>
-        </article>
-        <article class="tool-card">
-          <span class="tool-number">05</span>
-          <h3>Raw telemetry</h3>
-          <p>Open the deeper view when you want the underlying readings and device capability details.</p>
-        </article>
-        <article class="tool-card">
-          <span class="tool-number">06</span>
-          <h3>Optional field tools</h3>
-          <p>Opt in to map imagery when needed and use supported on-device AI summaries without a Signal Walk account.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec-export band">
-    <div class="section-inner">
+      <div class="section-heading"><p class="eyebrow">Core workflow</p><h2>Keep the live view clear and the details close</h2><p class="section-lead">Signal Walk gives disconnected measurements a shared timeline without claiming to identify a person, device owner, cause, or threat.</p></div>
       <div class="feature-row">
-        <div class="feature-art large">
-          <button class="thumb-button" type="button" data-lightbox-src="screenshots/export.png" data-lightbox-alt="Signal Walk Export screen showing export targets and privacy modes" data-lightbox-caption="Export — select a target and privacy mode before Signal Walk writes a file.">
-            <span class="device-frame">
-              <img src="screenshots/export.png" alt="Signal Walk Export screen showing Detailed, Redacted, and Summary-only privacy modes" width="480" height="1071" loading="lazy">
-            </span>
-          </button>
-        </div>
-        <div class="feature-copy">
-          <p class="eyebrow">Your data, your next step</p>
-          <h2>Move from observation to analysis</h2>
-          <p>Export a live snapshot or a saved session, then open the result in a spreadsheet, chart it in a notebook, inspect it with a script, or archive it with your project notes. Signal Walk creates the file; you decide where it goes next.</p>
-
-          <div class="mode-stack" aria-label="Export privacy modes">
-            <article class="mode-card">
-              <h3>Detailed</h3>
-              <p>More telemetry for technical inspection, while the highest-risk identifiers remain excluded by design.</p>
-            </article>
-            <article class="mode-card recommended">
-              <div class="mode-heading"><h3>Redacted</h3><span class="default-tag">Default</span></div>
-              <p>Identifiers and precise coordinates removed for a safer, share-conscious export.</p>
-            </article>
-            <article class="mode-card">
-              <h3>Summary only</h3>
-              <p>Counts, labels, and session metadata for the smallest and simplest output.</p>
-            </article>
-          </div>
-        </div>
+        <div class="feature-art"><button class="thumb-button" type="button" aria-label="Open larger screenshot: Live capture" aria-haspopup="dialog" data-lightbox-src="screenshots/live.png" data-lightbox-alt="Signal Walk Live screen showing a walk capture and recent events" data-lightbox-caption="Live — nearby signals, motion, sensor status, and notable changes update in one view."><span class="device-frame"><img src="screenshots/live.png" alt="Signal Walk Live screen showing a walk capture and recent events" width="480" height="1071" loading="lazy"></span></button></div>
+        <div class="feature-copy"><p class="eyebrow">Live</p><h3>See change while it happens</h3><p>Follow supported nearby signal counts, motion, environmental readings, location quality, and recent events from one focused screen.</p></div>
       </div>
-    </div>
-  </section>
-
-  <section class="sec-widget">
-    <div class="section-inner">
       <div class="feature-row reverse">
-        <div class="feature-art large">
-          <button class="thumb-button" type="button" data-lightbox-src="screenshots/widget.png" data-lightbox-alt="Signal Walk home-screen widget showing status and capture actions" data-lightbox-caption="Widget — check key status and start a short capture from the Android home screen.">
-            <span class="device-frame">
-              <img src="screenshots/widget.png" alt="Signal Walk home-screen widget showing BLE, Wi-Fi, motion, and location status" width="480" height="1071" loading="lazy">
-            </span>
-          </button>
-        </div>
-        <div class="feature-copy">
-          <p class="eyebrow">Ready before the app opens</p>
-          <h2>Put the instrument on your home screen</h2>
-          <p>Check BLE, Wi-Fi, motion, and location status at a glance, or begin a short capture directly from the widget when the moment is already moving.</p>
-        </div>
+        <div class="feature-art"><button class="thumb-button" type="button" aria-label="Open larger screenshot: Saved sessions" aria-haspopup="dialog" data-lightbox-src="screenshots/sessions.png" data-lightbox-alt="Signal Walk Sessions screen listing saved captures" data-lightbox-caption="Sessions — return to saved captures with their duration, event count, and privacy mode."><span class="device-frame"><img src="screenshots/sessions.png" alt="Signal Walk Sessions screen listing saved captures with duration, events, and privacy mode" width="480" height="1071" loading="lazy"></span></button></div>
+        <div class="feature-copy"><p class="eyebrow">Sessions</p><h3>Keep the result, not just the moment</h3><p>Review saved captures, compare different places or times, and delete sessions from the app when you no longer need them.</p></div>
       </div>
     </div>
   </section>
-
-  <section class="sec-raw band">
-    <div class="section-inner">
-      <div class="feature-row">
-        <div class="feature-art">
-          <button class="thumb-button" type="button" data-lightbox-src="screenshots/raw.png" data-lightbox-alt="Signal Walk Raw telemetry screen with expandable sensor sections" data-lightbox-caption="Raw — inspect the underlying status, radio, motion, environment, map, and device-capability details.">
-            <span class="device-frame">
-              <img src="screenshots/raw.png" alt="Signal Walk Raw telemetry screen with expandable status, map, radio, motion, and device sections" width="480" height="1071" loading="lazy">
-            </span>
-          </button>
-        </div>
-        <div class="feature-copy">
-          <p class="eyebrow">A clear surface with depth underneath</p>
-          <h2>Go deeper without cluttering the main experience</h2>
-          <p>The Live screen keeps the primary task readable. The Raw view exposes the underlying telemetry and device-capability details for users who want to inspect exactly what their phone can provide.</p>
+  <section class="sec-export band">
+    <div class="section-inner"><div class="feature-row">
+      <div class="feature-art large"><button class="thumb-button" type="button" aria-label="Open larger screenshot: Export controls" aria-haspopup="dialog" data-lightbox-src="screenshots/export.png" data-lightbox-alt="Signal Walk Export screen showing export targets and privacy modes" data-lightbox-caption="Export — select a target and privacy mode before Signal Walk writes a file."><span class="device-frame"><img src="screenshots/export.png" alt="Signal Walk Export screen showing Detailed, Redacted, and Summary-only privacy modes" width="480" height="1071" loading="lazy"></span></button></div>
+      <div class="feature-copy"><p class="eyebrow">Export and privacy controls</p><h2>Choose the level of detail before creating a file</h2><p>Signal Walk writes an export only when you request one. Use the result in your own spreadsheet, notebook, script, or project archive.</p>
+        <div class="mode-stack">
+          <article class="mode-card"><h3>Detailed</h3><p>More telemetry for a specific technical need while excluded high-risk identifiers remain omitted.</p></article>
+          <article class="mode-card recommended"><div class="mode-heading"><h3>Redacted</h3><span class="default-tag">Default</span></div><p>Removes identifiers and precise coordinates to reduce exposure when sharing.</p></article>
+          <article class="mode-card"><h3>Summary only</h3><p>Counts, labels, and session metadata for the smallest output.</p></article>
         </div>
       </div>
-
+    </div></div>
+  </section>
+  <section class="sec-raw">
+    <div class="section-inner"><div class="feature-row">
+      <div class="feature-art"><button class="thumb-button" type="button" aria-label="Open larger screenshot: Raw telemetry" aria-haspopup="dialog" data-lightbox-src="screenshots/raw.png" data-lightbox-alt="Signal Walk Raw telemetry screen with expandable sensor sections" data-lightbox-caption="Raw — inspect status, radio, motion, environment, map, and device-capability details."><span class="device-frame"><img src="screenshots/raw.png" alt="Signal Walk Raw telemetry screen with expandable status, radio, motion, environment, map, and device sections" width="480" height="1071" loading="lazy"></span></button></div>
+      <div class="feature-copy"><p class="eyebrow">Raw telemetry</p><h2>Inspect what your phone can provide</h2><p>Open the deeper view for underlying readings and device-capability details while the primary workflow stays readable.</p>
+        <p><strong>Widget:</strong> supported devices can also show key status and provide a shortcut into capture from the Android home screen.</p>
+      </div>
+    </div></div>
+    <div class="section-inner">
       <div class="more-screens">
-        <button class="thumb-button" type="button" data-lightbox-src="screenshots/navigation.png" data-lightbox-alt="Signal Walk navigation drawer" data-lightbox-caption="Navigation — move between Live, Sessions, Export, Raw, appearance, alerts, AI summaries, and app information.">
-          <span class="device-frame small">
-            <img src="screenshots/navigation.png" alt="Signal Walk navigation drawer with Live, Sessions, Export, Raw, Appearance, Voice and Alerts, AI Summaries, and About and Safety" width="480" height="1071" loading="lazy">
-          </span>
-        </button>
-        <div class="more-screens-copy">
-          <p class="eyebrow">Everything has a place</p>
-          <h3>Move quickly between the job and the details</h3>
-          <p>The navigation drawer keeps the core workflow—Live, Sessions, Export, and Raw—close at hand, with settings and optional features separated from the primary capture experience.</p>
-        </div>
+        <button class="thumb-button" type="button" aria-label="Open larger screenshot: Home-screen widget" aria-haspopup="dialog" data-lightbox-src="screenshots/widget.png" data-lightbox-alt="Signal Walk home-screen widget showing wireless, motion, and location status" data-lightbox-caption="Widget — check key status and open capture from the Android home screen on supported devices."><span class="device-frame small"><img src="screenshots/widget.png" alt="Signal Walk home-screen widget showing Bluetooth, Wi-Fi, motion, and location status" width="480" height="1071" loading="lazy"></span></button>
+        <div class="more-screens-copy"><p class="eyebrow">Home-screen widget</p><h3>Keep the next capture close</h3><p>On supported devices, check key status and open Signal Walk from the Android home screen.</p></div>
       </div>
     </div>
   </section>
-
-  <section class="sec-audience">
-    <div class="section-inner">
-      <div class="section-heading centered">
-        <p class="eyebrow">Built for careful curiosity</p>
-        <h2>A practical tool for learning, testing, and field notes</h2>
-      </div>
-      <div class="audience-grid">
-        <article>
-          <h3>Curious Android users</h3>
-          <p>See how much environmental context a modern phone can observe without turning the experience into a wall of raw numbers.</p>
-        </article>
-        <article>
-          <h3>Developers and testers</h3>
-          <p>Compare sensor availability, permission behavior, and device capabilities across different Android hardware.</p>
-        </article>
-        <article>
-          <h3>Wireless and sensor hobbyists</h3>
-          <p>Create informal, organized field sessions for personal learning and exploration of ambient conditions.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec-capability band">
-    <div class="section-inner prose wide-prose">
-      <p class="eyebrow">Know what the instrument means</p>
-      <h2>Observation, not identification</h2>
-      <p>Signal Walk organizes information exposed through supported Android APIs. It does not intercept communications, inspect message content, identify people, connect to nearby devices, or prove why a signal appeared.</p>
-      <p>It is not a threat detector, surveillance system, or forensic instrument. Use it to learn about environments and devices—not to draw conclusions about individuals.</p>
-      <p><a class="text-link" href="responsible-use/">Read the complete Responsible Use guidance</a>.</p>
-    </div>
-  </section>
-
-  <section class="sec-privacy" id="privacy">
-    <div class="section-inner privacy-layout">
-      <div>
-        <p class="eyebrow">Local-first by design</p>
-        <h2>Your sessions stay under your control</h2>
-        <p class="section-lead">Signal Walk does not require an account or a developer-operated session-data service. Saved sessions remain in the app's private local storage unless you choose to export or share them.</p>
-        <a class="button" href="privacy/">Read the Privacy Policy</a>
-      </div>
-      <ul class="privacy-list">
-        <li><strong>No account</strong><span>There is no Signal Walk login or cloud session library.</span></li>
-        <li><strong>Saved sessions stay local</strong><span>The app keeps session metadata, event records, and generated insights in private app storage.</span></li>
-        <li><strong>Exports are explicit</strong><span>Files are written only when you request a report, snapshot, or recording export.</span></li>
-        <li><strong>Optional network features</strong><span>Online maps and Google model delivery are disclosed and user-initiated.</span></li>
-      </ul>
-    </div>
-  </section>
-
   <section class="sec-compatibility band">
     <div class="section-inner compatibility-card">
-      <div>
-        <p class="eyebrow">Device compatibility</p>
-        <h2>Your phone decides what is available</h2>
-      </div>
-      <div>
-        <p>Signal Walk uses supported Android APIs and the sensors present in your device. Exact readings vary by phone model, Android version, permissions, radio state, and surroundings.</p>
-        <p>Signal Walk currently supports Android 12 and newer (minimum SDK 31) and is built against API level 36. Bluetooth scans, nearby Wi-Fi scans, cellular status, and precise-location map features each depend on their related runtime permissions.</p>
-        <p>If you decline some permissions, the app still opens and you can review saved sessions, manage exports, read the policies, and use the offline field-grid map mode, while the blocked channels stay unavailable until you grant access.</p>
-        <p>Online imagery is opt-in. When it stays off, the map remains in field-grid or offline mode. Optional AI summaries run only on supported devices after a disclosure and model-availability check, so availability varies by device.</p>
-      </div>
+      <div><p class="eyebrow">Compatibility and permissions</p><h2>Your phone decides what is available</h2></div>
+      <div><p>Readings vary by hardware, Android version, system settings, radio state, granted permissions, and surroundings. A channel remains unavailable when its required hardware, setting, or permission is unavailable.</p><p>Online map imagery and on-device AI summaries are optional. AI availability depends on compatible Google-provided on-device support and a successful availability check.</p></div>
     </div>
   </section>
-
-  <section class="sec-contact" id="contact">
-    <div class="section-inner">
-      <div class="section-heading">
-        <p class="eyebrow">Contact Signal Walk</p>
-        <h2>Reach the right address directly</h2>
-        <p class="section-lead">Choose the mailbox that matches your question so it reaches the right place without being passed around.</p>
-      </div>
-
-      <div class="contact-grid">
-        <article class="contact-card">
-          <h3>Product support</h3>
-          <p>Installation help, Play Store support, feature questions, and general troubleshooting.</p>
-          <a href="mailto:support@signalwalk.com">support@signalwalk.com</a>
-        </article>
-        <article class="contact-card">
-          <h3>Privacy</h3>
-          <p>Questions or requests related to the Privacy Policy and personal-data handling.</p>
-          <a href="mailto:privacy@signalwalk.com">privacy@signalwalk.com</a>
-        </article>
-        <article class="contact-card">
-          <h3>Security</h3>
-          <p>Responsible disclosure of vulnerabilities or other security concerns.</p>
-          <a href="mailto:security@signalwalk.com">security@signalwalk.com</a>
-        </article>
-        <article class="contact-card">
-          <h3>General contact</h3>
-          <p>Partnerships, press, project questions, and anything that does not fit elsewhere.</p>
-          <a href="mailto:hello@signalwalk.com">hello@signalwalk.com</a>
-        </article>
-        <article class="contact-card">
-          <h3>Developer contact</h3>
-          <p>Developer identity, publishing, technical ownership, and platform-provider inquiries.</p>
-          <a href="mailto:developer@signalwalk.com">developer@signalwalk.com</a>
-        </article>
-      </div>
-    </div>
+  <section class="sec-capability band">
+    <div class="section-inner prose wide-prose"><p class="eyebrow">Responsible use</p><h2>Explore signals, not people.</h2><p>Signal Walk does not identify people, determine intent, detect threats, establish surveillance, or produce validated forensic evidence. Use it for learning, personal field observation, education, and authorized device or environment testing.</p><p><a class="text-link" href="responsible-use/">Read the Responsible Use guidance</a>.</p></div>
   </section>
-
   <section class="closing-cta">
-    <div class="section-inner">
-      <p class="eyebrow">A field instrument made to move</p>
-      <h2>Take Signal Walk for a walk.</h2>
-      <p class="section-lead">Capture a few minutes, review what changed, and discover what your Android phone can tell you about the environment around it.</p>
-      <div class="cta-row centered-row">
-        <span class="badge-soon">Coming to Google Play</span>
+    <div class="section-inner"><p class="eyebrow">Google Play closed test</p><h2>Try Signal Walk on your Android device.</h2><p class="section-lead">Run several short field sessions and tell us what worked, what was confusing, and what broke.</p><div class="cta-row centered-row"><a class="button" href="early-access/">Request early access</a></div></div>
+  </section>
+  <section class="sec-contact" id="contact">
+    <div class="section-inner"><div class="section-heading"><p class="eyebrow">Contact</p><h2>Reach Signal Walk directly</h2></div>
+      <div class="contact-grid">
+        <article class="contact-card"><h3>Support and closed test</h3><p>Access requests, installation help, and product feedback.</p><a href="mailto:support@signalwalk.com">support@signalwalk.com</a></article>
+        <article class="contact-card"><h3>Privacy</h3><p>Privacy questions and requests.</p><a href="mailto:privacy@signalwalk.com">privacy@signalwalk.com</a></article>
+        <article class="contact-card"><h3>Security</h3><p>Responsible vulnerability disclosure.</p><a href="mailto:security@signalwalk.com">security@signalwalk.com</a></article>
       </div>
     </div>
   </section>
-
 </main>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="icon-512.png" alt="" aria-hidden="true" width="30" height="30">
-      <div class="footer-brand-text">
-        <strong>Signal Walk</strong>
-        <span>Field instrument for signal awareness</span>
-      </div>
-    </div>
-    <ul class="footer-links">
-      <li><a href="early-access/">Early Access</a></li>
-      <li><a href="privacy/">Privacy Policy</a></li>
-      <li><a href="responsible-use/">Responsible Use</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <p class="footer-copyright">&copy; 2026 Signal Walk.</p>
-  </div>
-</footer>
-
-<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close screenshot">&times;</button>
-    <img id="lightbox-img" alt="">
-    <p class="lightbox-caption" id="lightbox-caption"></p>
-  </div>
+<footer class="site-footer"><div class="footer-inner">
+  <div class="footer-brand"><img src="icon-48.png" alt="" width="30" height="30"><div class="footer-brand-text"><strong>Signal Walk</strong><span>Field instrument for signal awareness</span></div></div>
+  <ul class="footer-links"><li><a href="./">Home</a></li><li><a href="early-access/">Early Access</a></li><li><a href="privacy/">Privacy</a></li><li><a href="responsible-use/">Responsible Use</a></li><li><a href="#contact">Support</a></li></ul>
+  <p class="footer-copyright">&copy; 2026 Signal Walk.</p>
+</div></footer>
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot preview" aria-describedby="lightbox-caption">
+  <div class="lightbox-inner"><button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close screenshot preview">&times;</button><img id="lightbox-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt=""><p class="lightbox-caption" id="lightbox-caption"></p></div>
 </dialog>
-
-<script src="assets/site.js" defer></script>
-
+<script src="assets/site-final.js" defer></script>
 </body>
 </html>

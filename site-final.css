@@ -1,0 +1,151 @@
+@import url("style.css");
+
+:root {
+  --anchor-offset: 132px;
+}
+
+html { scroll-padding-top: var(--anchor-offset); }
+[id] { scroll-margin-top: var(--anchor-offset); }
+body.nav-open { overflow: auto; }
+
+:focus-visible {
+  outline: 3px solid #064fb5;
+  outline-offset: 3px;
+}
+
+.site-header :focus-visible,
+.site-footer :focus-visible,
+.lightbox :focus-visible {
+  outline-color: #b9d4ff;
+  box-shadow: 0 0 0 2px #061b3d;
+}
+
+.mark { width: 40px; height: 40px; }
+.site-header { position: sticky; top: 0; }
+.nav-links a[aria-current="page"] {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.45rem;
+}
+
+.early-access-strip[hidden] { display: none; }
+.early-access-strip-inner {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  gap: .75rem;
+}
+.announcement-dismiss {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+  place-items: center;
+  background: transparent;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.legal-masthead {
+  display: grid;
+  margin-bottom: 2.5rem;
+  padding: clamp(1.35rem, 4vw, 2.2rem);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(rgba(3,23,56,.96), rgba(3,23,56,.96)),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.07) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.07) 0 1px, transparent 1px 24px);
+  color: #fff;
+}
+.legal-masthead .mark { margin-bottom: 1rem; border-radius: 9px; }
+.legal-masthead h1 { color: #fff; margin-bottom: .65rem; }
+.legal-masthead .eyebrow, .legal-masthead .updated { color: #bcd2f8; }
+.legal-masthead p:last-child { max-width: 680px; margin-bottom: 0; color: #e3ecfb; }
+.toc {
+  margin: 0 0 2.5rem;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-soft);
+}
+.toc h2 { margin-bottom: .75rem; font-size: 1.15rem; }
+.toc ul { display: grid; margin: 0; padding-left: 1.2rem; gap: .35rem; grid-template-columns: repeat(2,minmax(0,1fr)); }
+
+.use-summary {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+.use-summary > div {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+.use-summary h2 { font-size: 1.25rem; }
+
+.early-access-page { max-width: 1080px; }
+.early-access-hero {
+  margin-bottom: 2rem;
+  padding: clamp(2rem,6vw,4rem);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(rgba(3,23,56,.95),rgba(3,23,56,.95)),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 1px,transparent 1px 24px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.07) 0 1px,transparent 1px 24px);
+  color: #fff;
+}
+.early-access-hero h1 { color: #fff; }
+.early-access-hero .eyebrow { color: #bcd2f8; }
+.early-access-hero p:not(.eyebrow) { max-width: 760px; color: #e3ecfb; font-size: 1.12rem; }
+.early-access-sections { display: grid; gap: 1rem; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.early-access-card {
+  padding: clamp(1.25rem,3vw,2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.early-access-card.full { grid-column: 1/-1; }
+.privacy-callout {
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  border-left: 5px solid var(--blue-600);
+  background: var(--blue-050);
+}
+.template-field {
+  width: 100%;
+  min-height: 17rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  font: inherit;
+}
+.copy-status { min-height: 1.5em; color: var(--blue-800); font-weight: 700; }
+.fallback-email { margin-bottom: 0; }
+
+.lightbox { overflow: auto; max-height: 94dvh; }
+.lightbox-inner { max-height: none; }
+.lightbox img { max-height: min(72dvh, 900px); }
+
+.not-found {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+@media (max-width: 780px) {
+  :root { --anchor-offset: 120px; }
+  .site-nav.is-open { max-height: calc(100dvh - 64px); overflow-y: auto; }
+  .toc ul, .use-summary, .early-access-sections { grid-template-columns: 1fr; }
+  .early-access-strip-inner { grid-template-columns: 1fr 44px; }
+}
+
+@media (max-width: 560px) {
+  .early-access-strip-text { font-size: .83rem; }
+}
