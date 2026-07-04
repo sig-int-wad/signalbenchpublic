@@ -5,6 +5,7 @@ Field instrument for signal awareness.
 This package contains a complete static copy of the rewritten Signal Walk public site:
 
 - `index.html` — product landing page
+- `early-access/index.html` — highlighted Early Access signup page
 - `privacy/index.html` — privacy policy
 - `responsible-use/index.html` — responsible-use guidance
 - `style.css` — shared responsive styles
